@@ -13,6 +13,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 import * as Speech from 'expo-speech';
 import { useStore } from '../../src/store/useStore';
+import AdMobBanner from '../../src/components/AdMobBanner';
 
 export default function SettingsScreen() {
   const systemDark = useColorScheme() === 'dark';
@@ -143,6 +144,9 @@ export default function SettingsScreen() {
           Radar Kontrol v1.0.0 • icisleri.gov.tr
         </Text>
       </ScrollView>
+
+      {/* Banner Reklam */}
+      <AdMobBanner />
     </SafeAreaView>
   );
 }

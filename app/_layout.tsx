@@ -4,6 +4,8 @@ import { useColorScheme } from 'react-native';
 import { useEffect } from 'react';
 import * as Notifications from 'expo-notifications';
 import '../src/services/backgroundTask';
+import admobService from '../src/services/admobService';
+import appOpenAdService from '../src/services/appOpenAdService';
 
 Notifications.setNotificationHandler({
   handleNotification: async () => ({
@@ -19,7 +21,14 @@ export default function RootLayout() {
   const colorScheme = useColorScheme();
 
   useEffect(() => {
+    // Bildirim izni
     Notifications.requestPermissionsAsync();
+    
+    // AdMob başlat
+    admobService.initialize().then(() => {
+      // İlk açılışta reklam göster
+      appOpenAdService.showInitialAd();
+    });
   }, []);
 
   return (

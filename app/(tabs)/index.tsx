@@ -13,6 +13,7 @@ import { useStore } from '../../src/store/useStore';
 import { RouteCard } from '../../src/components/RouteCard';
 import { useLocation } from '../../src/hooks/useLocation';
 import { startBackgroundTracking, stopBackgroundTracking } from '../../src/services/backgroundTask';
+import AdMobBanner from '../../src/components/AdMobBanner';
 
 export default function MapScreen() {
   const systemDark = useColorScheme() === 'dark';
@@ -209,6 +210,11 @@ export default function MapScreen() {
           </View>
         </View>
       )}
+
+      {/* Banner Reklam */}
+      <View style={styles.adContainer}>
+        <AdMobBanner />
+      </View>
     </View>
   );
 }
@@ -250,13 +256,13 @@ const styles = StyleSheet.create({
   },
   cardContainer: {
     position: 'absolute',
-    bottom: 0,
+    bottom: 60, // Banner için yer bırak
     left: 0,
     right: 0,
   },
   noRouteContainer: {
     position: 'absolute',
-    bottom: 24,
+    bottom: 84, // Banner için yer bırak
     left: 24,
     right: 24,
     alignItems: 'center',
@@ -265,6 +271,13 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     paddingHorizontal: 20,
     paddingVertical: 12,
+  },
+  adContainer: {
+    position: 'absolute',
+    bottom: 0,
+    left: 0,
+    right: 0,
+    zIndex: 5,
   },
   alertBanner: {
     position: 'absolute',

@@ -19,6 +19,7 @@ import { router } from 'expo-router';
 import { useStore } from '../../src/store/useStore';
 import { useRadar } from '../../src/hooks/useRadar';
 import { City, District, FavoriteRoute } from '../../src/types';
+import AdMobBanner from '../../src/components/AdMobBanner';
 
 const districts: City[] = require('../../assets/data/districts.json');
 
@@ -199,6 +200,9 @@ export default function RouteScreen() {
           </View>
         )}
       </ScrollView>
+
+      {/* Banner Reklam */}
+      <AdMobBanner />
 
       {/* Picker Modal */}
       <Modal visible={modalVisible} animationType="slide" presentationStyle="pageSheet">
