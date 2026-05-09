@@ -92,21 +92,3 @@ RadarKontrol/
 │   ├── types/index.ts        → TypeScript tipleri
 │   └── utils/haversine.ts    → Mesafe hesabı
 └── assets/data/districts.json → 81 il / 973 ilçe verisi
-```
-
-## API
-
-### CreateRoute
-```
-POST https://www.icisleri.gov.tr/ISAYWebPart/PolGenControlPointV2/CreateRoute
-Body: fromLatitude, fromLongitude, toLatitude, toLongitude, fromDistrictId, toDistrictId
-```
-
-Response: Rota polyline, hız koridorları (tam GPS koordinatları), tekil radar noktaları, il bazlı istatistik
-
-### GetDistricts
-```
-GET https://www.icisleri.gov.tr/ISAYWebPart/PolGenControlPointV2/GetDistricts?cityId={plateNo}
-```
-
-Response: `[{ Id, Name, Latitude, Longitude }]` — İlçe listesi (cityId = il plaka numarası)
