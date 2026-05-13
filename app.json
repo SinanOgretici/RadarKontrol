@@ -4,7 +4,7 @@
     "slug": "RadarKontrol",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/unnamed.png",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": false,
     "splash": {
@@ -21,7 +21,7 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/unnamed.png",
         "backgroundColor": "#1a1a2e"
       },
       "package": "com.radarkontrol.teleferic",
@@ -59,7 +59,7 @@
       [
         "expo-notifications",
         {
-          "icon": "./assets/icon.png"
+          "icon": "./assets/unnamed.png"
         }
       ],
       [
